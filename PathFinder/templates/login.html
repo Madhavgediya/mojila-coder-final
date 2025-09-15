@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>EduPath - Login</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --background-color: #f0f7f4;
+        --card-bg-color: #ffffff;
+        --primary-accent-color: #6bb09f;
+        --secondary-accent-color: #b3e0d2;
+        --text-color: #2c3e50;
+        --placeholder-color: #95a5a6;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background-color);
+      }
+      .login-card {
+        background-color: var(--card-bg-color);
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      .form-input-container {
+        position: relative;
+      }
+      .form-input {
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        color: var(--text-color);
+        padding: 1rem 1rem 1rem 2.75rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .form-input::placeholder {
+        color: var(--placeholder-color);
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: var(--primary-accent-color);
+        box-shadow: 0 0 0 3px var(--secondary-accent-color);
+      }
+      .input-icon {
+        position: absolute;
+        left: 0.875rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #bdc3c7;
+      }
+      .login-btn {
+        background-color: var(--primary-accent-color);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(107, 176, 159, 0.4);
+        transition: background-color 0.2s, transform 0.2s;
+      }
+      .login-btn:hover {
+        background-color: #5a9d8c;
+        transform: translateY(-2px);
+      }
+      .forgot-password {
+        color: var(--primary-accent-color);
+        transition: color 0.2s;
+      }
+      .forgot-password:hover {
+        color: #5a9d8c;
+      }
+    </style>
+  </head>
+
+  <body class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md p-8 sm:p-12 mx-4 sm:mx-0 login-card">
+      <div class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-gray-800 tracking-tight">
+          Welcome Back!
+        </h1>
+        <p class="text-gray-500 mt-2">Your path to a brighter future awaits.</p>
+      </div>
+      <form action="{% url 'login' %}" class="space-y-6" method="POST">
+        <div class="form-input-container">
+          <span class="material-symbols-outlined input-icon"> mail </span>
+          <input
+            autocomplete="email"
+            class="form-input w-full h-14"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+            required=""
+            type="email"
+          />
+        </div>
+        <div class="form-input-container">
+          <span class="material-symbols-outlined input-icon"> lock </span>
+          <input
+            autocomplete="current-password"
+            class="form-input w-full h-14"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required=""
+            type="password"
+          />
+        </div>
+        <div class="flex items-center justify-end">
+          <div class="text-sm">
+            <a class="font-medium forgot-password" href="#">
+              Forgot Password?
+            </a>
+          </div>
+        </div>
+        <div>
+          <button
+            class="group relative w-full flex justify-center py-4 px-4 border border-transparent text-lg font-semibold text-white login-btn"
+            type="submit"
+          >
+            <a href="dashboard.html">Log In</a>
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

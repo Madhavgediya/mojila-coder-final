@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>PathFinder</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --light-background: #f7fafc;
+        --soft-blue: #a0deff;
+        --soft-green: #a7f3d0;
+        --pastel-highlight: #fed7e2;
+        --text-color: #2d3748;
+        --heading-color: #1a202c;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--light-background);
+        color: var(--text-color);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Inter", sans-serif;
+        color: var(--heading-color);
+      }
+      .btn {
+        @apply rounded-full shadow-md transition-transform transform hover:scale-105;
+      }
+      .btn-primary {
+        @apply bg-blue-500 hover:bg-blue-600 text-white;
+      }
+      .btn-secondary {
+        @apply bg-gray-200 hover:bg-gray-300 text-gray-800;
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <div
+      class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="flex items-center justify-between whitespace-nowrap px-10 py-5 bg-white/80 backdrop-blur-sm sticky top-0 z-50"
+        >
+          <div class="flex items-center gap-3 text-gray-800">
+            <span class="material-symbols-outlined text-3xl text-blue-500"
+              >explore</span
+            >
+            <h2 class="text-2xl font-bold tracking-tight">PathFinder</h2>
+          </div>
+          <div
+            class="hidden md:flex items-center gap-8 text-gray-600 font-medium"
+          >
+            <a
+              class="hover:text-blue-500 transition-colors"
+              href="{% url 'landing_page' %}"
+              >Home</a
+            >
+            <a class="hover:text-blue-500 transition-colors" href="#features"
+              >Features</a
+            >
+            <a class="hover:text-blue-500 transition-colors" href="#about"
+              >About</a
+            >
+            <a class="hover:text-blue-500 transition-colors" href="#contact"
+              >Contact</a
+            >
+          </div>
+          <div class="flex gap-3">
+            <button
+              class="btn btn-primary h-12 px-6 text-base font-bold"
+              onclick="window.location.href='{% url 'register' %}'"
+            >
+              <span class="truncate">Register</span>
+            </button>
+            <button
+              class="btn btn-secondary h-12 px-6 text-base font-bold"
+              onclick="window.location.href='{% url 'login' %}'"
+            >
+              <span class="truncate">Login</span>
+            </button>
+          </div>
+        </header>
+        <!-- Chat Bot -->
+        <div class="fixed bottom-10 right-10 flex flex-row justify-center border-2 border-black bg-white rounded-full">
+          <a href="/chatbot">
+            <img src="https://static.thenounproject.com/png/ai-chatbot-icon-6782812-512.png" alt="" class="w-16">
+          </a>
+        </div>
+        <main class="flex-1">
+          <section class="px-4 md:px-20 py-20 lg:py-32">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+              <div class="flex flex-col gap-8 text-center lg:text-left">
+                <h1
+                  class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight"
+                >
+                  Find Your Best Career Path
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600">
+                  Unlock your potential with personalized career guidance,
+                  tailored courses, and comprehensive education planning. Start
+                  your journey towards a fulfilling future today.
+                </p>
+                <div
+                  class="flex flex-wrap gap-4 justify-center lg:justify-start"
+                >
+                  <button
+                    class="btn btn-primary h-14 px-8 text-lg font-bold"
+                    onclick="window.location.href='{% url 'register' %}'"
+                  >
+                    <span class="truncate">Register</span>
+                  </button>
+                  <button
+                    class="btn btn-secondary h-14 px-8 text-lg font-bold"
+                    onclick="window.location.href='{% url 'login' %}'"
+                  >
+                    <span class="truncate">Login</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-center">
+                <img
+                  alt="A student looking at a career path illustration"
+                  class="rounded-3xl shadow-2xl w-full max-w-md lg:max-w-none"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpN_YJ1fgXw6gpyOJzfWCktruldNLZgtZFrn1CWtZlcnqUU_EoOWtUuOVhfT3P-HyxeO5qWTQVPUB5fA13J0vVnS_6G5b0_qXGDPCca60E3UpbEl3kghZj8FopEb0JN27zzGHV9BcHFLbXYqpRyNkhQ1JfwiPxXXnB7pRg6USprgiRf9tEaEO4oeOA6kXOo-fK2nWJbD4OqK5olh4mIrYgY_R9pNWFk9x7lx9bUf9AwgIx5x5mr6Qs3GFo52p52_adUZZAkfwcHCh2"
+                />
+              </div>
+            </div>
+          </section>
+          <section class="px-4 md:px-20 py-20 bg-white" id="features">
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
+                Key Features
+              </h2>
+              <p class="text-lg text-gray-600 mt-4">
+                Everything you need to succeed on your career journey.
+              </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div
+                class="flex flex-col items-center text-center p-8 bg-slate-50 rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="p-5 rounded-full bg-blue-100 mb-6">
+                  <span class="material-symbols-outlined text-4xl text-blue-500"
+                    >psychology</span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold mb-3">AI Career Guidance</h3>
+                <p class="text-gray-600">
+                  Leverage cutting-edge AI to discover career paths that align
+                  with your skills and interests.
+                </p>
+              </div>
+              <div
+                class="flex flex-col items-center text-center p-8 bg-slate-50 rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="p-5 rounded-full bg-green-100 mb-6">
+                  <span
+                    class="material-symbols-outlined text-4xl text-green-500"
+                    >school</span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Personalized Courses</h3>
+                <p class="text-gray-600">
+                  Access a curated selection of courses to prepare you for your
+                  chosen career.
+                </p>
+              </div>
+              <div
+                class="flex flex-col items-center text-center p-8 bg-slate-50 rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300"
+              >
+                <div class="p-5 rounded-full bg-pink-100 mb-6">
+                  <span class="material-symbols-outlined text-4xl text-pink-500"
+                    >event_note</span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Education Planning</h3>
+                <p class="text-gray-600">
+                  Plan your educational journey with expert advice and resources
+                  to achieve your academic goals.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="px-4 md:px-20 py-20 bg-white" id="about">
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
+                Our Reviews
+              </h2>
+              <!-- <p class="text-lg text-gray-600 mt-4">
+                Everything you need to succeed on your career journey.
+              </p> -->
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <!-- From Uiverse.io by sudhucodes -->
+              <div
+                class="max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
+              >
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="h-12 w-12 flex items-center justify-center bg-red-500 text-white text-lg font-semibold rounded-full"
+                  >
+                    DJ
+                  </div>
+                  <div>
+                    <div class="text-gray-900 font-medium">Donald Jackman</div>
+                    <div class="text-gray-600 text-sm">Content Creator</div>
+                  </div>
+                </div>
+
+                <div class="flex text-red-500 text-xl">★★★★★</div>
+
+                <p class="text-gray-700">
+                  I've been using Imagify for nearly two years, primarily for
+                  Instagram, and it has been incredibly user-friendly, making my
+                  work much easier.
+                </p>
+
+                <div
+                  class="text-red-500 font-medium cursor-pointer hover:underline"
+                >
+                  Read more
+                </div>
+              </div>
+
+              <!-- From Uiverse.io by sudhucodes -->
+              <div
+                class="max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
+              >
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="h-12 w-12 flex items-center justify-center bg-red-500 text-white text-lg font-semibold rounded-full"
+                  >
+                    DJ
+                  </div>
+                  <div>
+                    <div class="text-gray-900 font-medium">Alex Demo</div>
+                    <div class="text-gray-600 text-sm">Content Creator</div>
+                  </div>
+                </div>
+
+                <div class="flex text-red-500 text-xl">★★★★★</div>
+
+                <p class="text-gray-700">
+                  I've been using Imagify for nearly two years, primarily for
+                  Instagram, and it has been incredibly user-friendly, making my
+                  work much easier.
+                </p>
+
+                <div
+                  class="text-red-500 font-medium cursor-pointer hover:underline"
+                >
+                  Read more
+                </div>
+              </div>
+
+              <!-- From Uiverse.io by sudhucodes -->
+              <div
+                class="max-w-sm border border-gray-300 rounded-lg shadow-lg bg-white p-6 space-y-4"
+              >
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="h-12 w-12 flex items-center justify-center bg-red-500 text-white text-lg font-semibold rounded-full"
+                  >
+                    DJ
+                  </div>
+                  <div>
+                    <div class="text-gray-900 font-medium">John Wick</div>
+                    <div class="text-gray-600 text-sm">Content Creator</div>
+                  </div>
+                </div>
+
+                <div class="flex text-red-500 text-xl">★★★</div>
+
+                <p class="text-gray-700">
+                  I've been using Imagify for nearly two years, primarily for
+                  Instagram, and it has been incredibly user-friendly, making my
+                  work much easier.
+                </p>
+
+                <div
+                  class="text-red-500 font-medium cursor-pointer hover:underline"
+                >
+                  Read more
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer class="bg-gray-800 text-white">
+          <div class="container mx-auto px-10 py-12">
+            <div
+              class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8"
+            >
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-3xl">explore</span>
+                <h2 class="text-2xl font-bold  tracking-tight text-white">PathFinder</h2>
+              </div>
+              <div class="flex flex-wrap justify-center gap-6 text-gray-400">
+                <a class="hover:text-white transition-colors" href="#"
+                  >Privacy Policy</a
+                >
+                <a class="hover:text-white transition-colors" href="#"
+                  >Terms of Service</a
+                >
+                <a class="hover:text-white transition-colors" href="#"
+                  >Contact Us</a
+                >
+              </div>
+              <p class="text-gray-500">
+                © 2024 PathFinder. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

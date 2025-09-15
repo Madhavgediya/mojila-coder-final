@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block start %} 
+
+      <main class="flex-1 p-8">
+        <div class="max-w-5xl mx-auto">
+          <header class="mb-12">
+            <h1 class="text-[var(--text-primary)] tracking-tight text-4xl font-bold">Welcome back, Sophia 👋</h1>
+            <p class="text-[var(--text-secondary)] text-lg mt-2">Let's explore your future career path and educational
+              opportunities.</p>
+          </header>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="card p-6 flex flex-col items-start bg-[var(--highlight-pastel-blue)]">
+              <div class="bg-blue-200 p-3 rounded-full mb-4">
+                <span class="material-symbols-outlined text-blue-600" style="font-size: 32px;">work</span>
+              </div>
+              <h2 class="text-[var(--text-primary)] text-xl font-bold mb-2">Get Career Advice</h2>
+              <p class="text-[var(--text-secondary)] text-base mb-6 flex-grow">Connect with experienced advisors to
+                discuss your career goals and get personalized guidance.</p>
+              <button
+                class="btn-primary mt-auto w-full flex items-center justify-center h-12 px-6 text-base font-semibold"
+                onclick="window.location.href='{% url 'career_advisor_input_page' %}'">
+                <span>Schedule a Session</span>
+              </button>
+            </div>
+            <div class="card p-6 flex flex-col items-start bg-[var(--highlight-pastel-green)]">
+              <div class="bg-green-200 p-3 rounded-full mb-4">
+                <span class="material-symbols-outlined text-green-600" style="font-size: 32px;">import_contacts</span>
+              </div>
+              <h2 class="text-[var(--text-primary)] text-xl font-bold mb-2">Explore Courses</h2>
+              <p class="text-[var(--text-secondary)] text-base mb-6 flex-grow">Discover courses tailored to your
+                interests and career aspirations. Enhance your skills and knowledge.</p>
+              <button
+                class="btn-primary bg-[var(--accent-green)] hover:bg-green-600 shadow-green-500/50 hover:shadow-green-500/40 w-full flex items-center justify-center h-12 px-6 text-base font-semibold"
+                onclick="window.location.href='#'">
+                <span>Browse Courses</span>
+              </button>
+            </div>
+            <div class="card p-6 flex flex-col items-start bg-rose-100">
+              <div class="bg-rose-200 p-3 rounded-full mb-4">
+                <span class="material-symbols-outlined text-rose-600" style="font-size: 32px;">save</span>
+              </div>
+              <h2 class="text-[var(--text-primary)] text-xl font-bold mb-2">View Saved Plans</h2>
+              <p class="text-[var(--text-secondary)] text-base mb-6 flex-grow">Access your saved career plans and
+                suggestions. Review and refine your path to success.</p>
+              <button
+                class="btn-primary bg-rose-500 hover:bg-rose-600 shadow-rose-500/50 hover:shadow-rose-500/40 w-full flex items-center justify-center h-12 px-6 text-base font-semibold"
+                onclick="window.location.href='#'">
+                <span>View Plans</span>
+              </button>
+            </div>
+          </div>
+          <div class="mt-12">
+            <div class="card overflow-hidden">
+              <img alt="Students collaborating" class="w-full h-64 object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ07M9TPcZ6_llT-iAofp_8KAbCnnnWhd7dxD5m1n_CJT2c0NaCOWl9mca0-TbPPbSvc5nOTjkCrNxI_iUIqwsGv1d2c4aCU2z25lEx_7zHwzJrFUucelh4UfI2HKEad0pbARMQHFNGIVNsV-PRJGCxbLbQZomEHlP-Sw2VcfJrDE8qo9tie5PBx0EgzY9QMDdrOg4wy4UtBqC4Rv9afRCC5iPWoG3wnhIHNtucUh6VfjhpWDBacNdpCirRVtRwpgABx3igyAvlfRi" />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+    {% endblock %}

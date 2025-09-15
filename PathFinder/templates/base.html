@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --background: #f8f9fa;
+        --sidebar-bg: #ffffff;
+        --card-bg: #ffffff;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --accent-blue: #3b82f6;
+        --accent-green: #10b981;
+        --highlight-pastel-blue: #e0f2fe;
+        --highlight-pastel-green: #d1fae5;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background);
+      }
+      .sidebar {
+        background-color: var(--sidebar-bg);
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .card {
+        background-color: var(--card-bg);
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05),
+          0 4px 6px -4px rgb(0 0 0 / 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+      .btn-primary {
+        background-color: var(--accent-blue);
+        color: white;
+        border-radius: 9999px;
+        box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5),
+          0 2px 4px -2px rgba(59, 130, 246, 0.5);
+        transition: all 0.2s ease-in-out;
+      }
+      .btn-primary:hover {
+        background-color: #2563eb;
+        box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4),
+          0 4px 6px -4px rgba(59, 130, 246, 0.4);
+      }
+      .nav-link {
+        color: var(--text-secondary);
+        border-radius: 0.75rem;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      .nav-link.active,
+      .nav-link:hover {
+        background-color: var(--highlight-pastel-blue);
+        color: var(--accent-blue);
+      }
+      .nav-link.active .material-symbols-outlined,
+      .nav-link:hover .material-symbols-outlined {
+        color: var(--accent-blue);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-[var(--background)] group/design-root overflow-x-hidden"
+    >
+      <div class="flex h-full grow">
+       <aside class="sidebar flex flex-col w-72 p-6 shrink-0">
+          <div class="flex items-center gap-4 mb-10">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZ3buoyohdEUtLVPqA9l4ncioatYx2sXcWpOjwZ6yRp1H3715Zl9GH26pFjJTAYWnbl6f7znjtXNqkOX7c5Hg48-cJn0g0VKozVANETPlCIpcYwLYDwFU_jai1x5R5o2DGfaWJqqdDvw3datWf7aPHKsFgoT_PpgydCiJ9e0dcI2AiiijSRX5ytVjsXBpEvWZV70Yg5z8-wuA3WzVQN2SfvKU-Q6V_zIvD_EvMkzbdNCwbA6YmzqdWK66fIWIHlrjzcFf7cjbZxy3Y');
+              "
+            ></div>
+            <h1 class="text-[var(--text-primary)] text-lg font-semibold">
+              Sophia Carter
+            </h1>
+          </div>
+          <nav class="flex flex-col gap-3">
+            <a
+              class="nav-link flex items-center gap-4 px-4 py-3"
+              href="/career_advisor_input_page"
+            >
+              <span class="material-symbols-outlined">search</span>
+              <p class="text-base font-medium">Find Career</p>
+            </a>
+            <a
+              class="nav-link flex items-center gap-4 px-4 py-3"
+              href="/recommand_course"
+            >
+              <span class="material-symbols-outlined">school</span>
+              <p class="text-base font-medium">Recommended Courses</p>
+            </a>
+          </nav>
+        </aside>
+               {% block start %} {% endblock %}
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

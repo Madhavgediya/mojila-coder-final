@@ -1,0 +1,81 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f7f4;
+            color: #2c3e50;
+        }
+        .profile-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .btn-primary {
+            background-color: #6bb09f;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #5a9d8c;
+        }
+        .input-field {
+            @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6bb09f] focus:border-transparent;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-2xl p-8 profile-card">
+        <h1 class="text-3xl font-bold text-center mb-8">User Profile</h1>
+        {% if messages %}
+            <ul class="messages mb-6">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }} text-center p-3 rounded-md mb-2 {% if message.tags == 'success' %}bg-green-100 text-green-800{% elif message.tags == 'error' %}bg-red-100 text-red-800{% endif %}"{% endif %}>
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form class="space-y-6" method="POST" action="{% url 'profile_page' %}">
+            {% csrf_token %}
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" id="username" name="username" value="{{ user.username }}" class="input-field mt-1" readonly>
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" value="{{ user.email }}" class="input-field mt-1" readonly>
+            </div>
+            <div>
+                <label for="id_dream_job" class="block text-sm font-medium text-gray-700">Dream Job</label>
+                {{ form.dream_job }}
+            </div>
+            <div>
+                <label for="id_current_skills" class="block text-sm font-medium text-gray-700">Current Skills</label>
+                {{ form.current_skills }}
+            </div>
+            <div>
+                <label for="id_desired_skills" class="block text-sm font-medium text-gray-700">Desired Skills</label>
+                {{ form.desired_skills }}
+            </div>
+            <div>
+                <label for="id_career_aspirations" class="block text-sm font-medium text-gray-700">Career Aspirations</label>
+                {{ form.career_aspirations }}
+            </div>
+            <div class="flex justify-end">
+                <button type="submit" class="btn-primary">Save Profile</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+{% extends "base.html" %} {% block start %} 
+
+            <!-- <div class="flex justify-between items-center mb-8">
+              <h2 class="text-2xl font-bold text-gray-800">Matching Careers</h2>
+              <div class="flex gap-4">
+                <button
+                  class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-full h-12 px-6 bg-cyan-500 text-white text-sm font-bold shadow-lg hover:bg-cyan-600 transition-all"
+                  onclick="window.location.href='#'"
+                >
+                  <span class="material-symbols-outlined">bookmark_add</span>
+                  <span class="truncate">Save Suggestions</span>
+                </button>
+                <button
+                  class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-full h-12 px-6 bg-gray-200 text-gray-700 text-sm font-bold shadow-lg hover:bg-gray-300 transition-all"
+                  onclick="window.location.href='#'"
+                >
+                  <span class="material-symbols-outlined">download</span>
+                  <span class="truncate">Download PDF</span>
+                </button>
+              </div>
+            </div> -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <div
+                  class="w-full h-48 bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfEsv3DManf46TMPyGuvaB7MQrP-RnWWpSmI3eqnqDmOKGdNRz1XSKLAGqfDKOx1ledo6zhKUG52B0iqzigPptVOnJ29eniH-XyLW2Uqz0Ulnh5ViDmaKrsfSoETAzHYysvtgGaGkLHbInBGYqCqLjeHdhcg_8PPgzDycXoYQIhbTNLQzwpAnUoHAFFM42rfBNw-gL_WgNioioKWQ-9Tu0FwZakiJSpS9jNNQSezZZVf0FQ1Vb37o4E96-ShxWLZ-fXHe8PbbLXzVi');
+                  "
+                ></div>
+                <div class="p-6">
+                  <h3 class="text-lg font-bold text-gray-800">
+                    Digital Marketing Specialist
+                  </h3>
+                  <p class="text-gray-500 text-sm mt-2 mb-4">
+                    Develop and execute digital marketing strategies, manage
+                    campaigns, and analyze performance.
+                  </p>
+                  <h4 class="font-semibold text-gray-700 mb-2">
+                    Required Skills
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >SEO/SEM</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Analytics</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Content Creation</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <div
+                  class="w-full h-48 bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxHLFNznA2fhdvaccwRVdXr_398n0K1YU2S8GVDRh6EnVxvHokiLC2OfDuHcAH16kYR8DBCrPJiTiUBwRir7-SJP4ReIGtcNa6q_OyYGDdCtt8yozeqRRysKLWfrJHDhxWXHf2BORfSXKtpWmo7CR3EilID0-ZwOj0Vz1oWm34JJ-BNqrQ5Dfl_E_MQpFHQ7oTpb_ino5V207m1AmahYUcvXALR2BqzU-uGzNJ80MiIuWIT9wtj_G1x-aU6cl_zEvspWM6qPmgp16I');
+                  "
+                ></div>
+                <div class="p-6">
+                  <h3 class="text-lg font-bold text-gray-800">
+                    UX/UI Designer
+                  </h3>
+                  <p class="text-gray-500 text-sm mt-2 mb-4">
+                    Design user-friendly interfaces and experiences for websites
+                    and applications.
+                  </p>
+                  <h4 class="font-semibold text-gray-700 mb-2">
+                    Required Skills
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Prototyping</span
+                    >
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >User Research</span
+                    >
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Figma</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <div
+                  class="w-full h-48 bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDeajPAU8elqvFA9hMiWW05nuMlymg8vby5mSulRFj1gnIzTyaqkJ0xNR09RL2aAqgVFOmvfXJQGmiaQCS-j6SUfwza5vdu2OPT6coa5vxhaPzzGTdMWGqqHtvue9LgeMb13za1YWwvNTJs6vpLIggiaDlMN6wQhdWI1KSKy6BlaF8Z-aszvJ9PNtNBuHM7UjmCI2Tc-XNcYVhEe1BvPZWYx3fGoutVh5sONfeWf5ZTcoh76cPlIFXSSugE7DYOT3v-9qu6KeWcyUBr');
+                  "
+                ></div>
+                <div class="p-6">
+                  <h3 class="text-lg font-bold text-gray-800">Data Analyst</h3>
+                  <p class="text-gray-500 text-sm mt-2 mb-4">
+                    Analyze data to identify trends, provide insights, and
+                    support decision-making.
+                  </p>
+                  <h4 class="font-semibold text-gray-700 mb-2">
+                    Required Skills
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >SQL</span
+                    >
+                    <span
+                      class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Python/R</span
+                    >
+                    <span
+                      class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Tableau</span
+                    >
+                  </div>
+                </div>
+              </div> <div
+                class="bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <div
+                  class="w-full h-48 bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfEsv3DManf46TMPyGuvaB7MQrP-RnWWpSmI3eqnqDmOKGdNRz1XSKLAGqfDKOx1ledo6zhKUG52B0iqzigPptVOnJ29eniH-XyLW2Uqz0Ulnh5ViDmaKrsfSoETAzHYysvtgGaGkLHbInBGYqCqLjeHdhcg_8PPgzDycXoYQIhbTNLQzwpAnUoHAFFM42rfBNw-gL_WgNioioKWQ-9Tu0FwZakiJSpS9jNNQSezZZVf0FQ1Vb37o4E96-ShxWLZ-fXHe8PbbLXzVi');
+                  "
+                ></div>
+                <div class="p-6">
+                  <h3 class="text-lg font-bold text-gray-800">
+                    Digital Marketing Specialist
+                  </h3>
+                  <p class="text-gray-500 text-sm mt-2 mb-4">
+                    Develop and execute digital marketing strategies, manage
+                    campaigns, and analyze performance.
+                  </p>
+                  <h4 class="font-semibold text-gray-700 mb-2">
+                    Required Skills
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >SEO/SEM</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Analytics</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Content Creation</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <div
+                  class="w-full h-48 bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxHLFNznA2fhdvaccwRVdXr_398n0K1YU2S8GVDRh6EnVxvHokiLC2OfDuHcAH16kYR8DBCrPJiTiUBwRir7-SJP4ReIGtcNa6q_OyYGDdCtt8yozeqRRysKLWfrJHDhxWXHf2BORfSXKtpWmo7CR3EilID0-ZwOj0Vz1oWm34JJ-BNqrQ5Dfl_E_MQpFHQ7oTpb_ino5V207m1AmahYUcvXALR2BqzU-uGzNJ80MiIuWIT9wtj_G1x-aU6cl_zEvspWM6qPmgp16I');
+                  "
+                ></div>
+                <div class="p-6">
+                  <h3 class="text-lg font-bold text-gray-800">
+                    UX/UI Designer
+                  </h3>
+                  <p class="text-gray-500 text-sm mt-2 mb-4">
+                    Design user-friendly interfaces and experiences for websites
+                    and applications.
+                  </p>
+                  <h4 class="font-semibold text-gray-700 mb-2">
+                    Required Skills
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Prototyping</span
+                    >
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >User Research</span
+                    >
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Figma</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <div
+                  class="w-full h-48 bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDeajPAU8elqvFA9hMiWW05nuMlymg8vby5mSulRFj1gnIzTyaqkJ0xNR09RL2aAqgVFOmvfXJQGmiaQCS-j6SUfwza5vdu2OPT6coa5vxhaPzzGTdMWGqqHtvue9LgeMb13za1YWwvNTJs6vpLIggiaDlMN6wQhdWI1KSKy6BlaF8Z-aszvJ9PNtNBuHM7UjmCI2Tc-XNcYVhEe1BvPZWYx3fGoutVh5sONfeWf5ZTcoh76cPlIFXSSugE7DYOT3v-9qu6KeWcyUBr');
+                  "
+                ></div>
+                <div class="p-6">
+                  <h3 class="text-lg font-bold text-gray-800">Data Analyst</h3>
+                  <p class="text-gray-500 text-sm mt-2 mb-4">
+                    Analyze data to identify trends, provide insights, and
+                    support decision-making.
+                  </p>
+                  <h4 class="font-semibold text-gray-700 mb-2">
+                    Required Skills
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >SQL</span
+                    >
+                    <span
+                      class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Python/R</span
+                    >
+                    <span
+                      class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                      >Tableau</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    {% endblock %}

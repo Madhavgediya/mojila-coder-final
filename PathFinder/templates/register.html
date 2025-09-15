@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduPath - Registration</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style type="text/tailwindcss">
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .form-input {
+        @apply w-full rounded-lg border-gray-200 bg-gray-50 p-4 pr-12 text-sm shadow-sm;
+      }
+      .form-label {
+        @apply text-sm font-medium text-gray-700;
+      }
+      .input-invalid {
+        @apply border-red-500 ring-red-500;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-50">
+    <div
+      class="relative flex min-h-screen flex-col overflow-x-hidden"
+      style="font-family: 'Poppins', 'Inter', 'Roboto', sans-serif"
+    >
+      <div
+        class="flex flex-1 items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+      >
+        <div class="w-full max-w-lg space-y-8">
+          <div class="rounded-2xl bg-white p-8 shadow-lg sm:p-12">
+            <div class="text-center">
+              <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+                Create Your Account
+              </h1>
+              <p class="mt-4 text-gray-500">
+                Let's get you started on your career journey!
+              </p>
+            </div>
+            <div
+              id="error-message"
+              class="mt-4 rounded-lg bg-red-100 p-4 text-red-700 hidden"
+            ></div>
+            <form class="space-y-6" id="registrationForm">
+              <div>
+                <label class="form-label" for="fullName">Full Name</label>
+                <div class="relative mt-2">
+                  <input
+                    class="form-input"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    type="text"
+                  />
+                  <span
+                    class="pointer-events-none absolute inset-y-0 right-0 grid w-12 place-content-center text-gray-400"
+                  >
+                    <span class="material-symbols-outlined"> person </span>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <label class="form-label" for="email">Email</label>
+                <div class="relative mt-2">
+                  <input
+                    class="form-input"
+                    id="email"
+                    placeholder="Enter your email address"
+                    type="email"
+                  />
+                  <span
+                    class="pointer-events-none absolute inset-y-0 right-0 grid w-12 place-content-center text-gray-400"
+                  >
+                    <span class="material-symbols-outlined"> mail </span>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <label class="form-label" for="password">Password</label>
+                <div class="relative mt-2">
+                  <input
+                    class="form-input"
+                    id="password"
+                    placeholder="Create a strong password"
+                    type="password"
+                  />
+                  <span
+                    class="pointer-events-none absolute inset-y-0 right-0 grid w-12 place-content-center text-gray-400"
+                  >
+                    <span class="material-symbols-outlined"> lock </span>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <label class="form-label" for="educationLevel"
+                  >Education Level</label
+                >
+                <div class="relative mt-2">
+                  <select
+                    class="form-input appearance-none"
+                    id="educationLevel"
+                  >
+                    <option value="">Select your education level</option>
+                    <option>High School</option>
+                    <option>Undergraduate</option>
+                    <option>Postgraduate</option>
+                  </select>
+                  <span
+                    class="pointer-events-none absolute inset-y-0 right-0 grid w-12 place-content-center text-gray-400"
+                  >
+                    <span class="material-symbols-outlined"> school </span>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <label class="form-label" for="skills">Skills/Interests</label>
+                <div class="relative mt-2">
+                  <textarea
+                    class="form-input h-24"
+                    id="skills"
+                    placeholder="e.g., Python, Graphic Design, Marketing"
+                  ></textarea>
+                </div>
+              </div>
+              <button
+                class="block w-full rounded-lg bg-teal-400 px-5 py-4 text-md font-medium text-white shadow-md transition hover:bg-teal-500 focus:outline-none focus:ring focus:ring-teal-300"
+                type="submit"
+              >
+                Register
+              </button>
+              <p class="text-center text-sm text-gray-500">
+                Already have an account?
+                <a
+                  class="font-medium text-teal-500 underline transition hover:text-teal-600"
+                  href="/login"
+                  >Login</a
+                   >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Success Modal -->
+    <div
+      id="successModal"
+      class="fixed inset-0 z-50 hidden flex items-center justify-center bg-gray-900 bg-opacity-50 transition-opacity"
+    >
+      <div
+        class="relative rounded-lg bg-white p-8 text-center shadow-xl w-full max-w-sm"
+      >
+        <div
+          class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-10 w-10"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </div>
+        <h3 class="mt-5 text-lg font-medium text-gray-900">
+          Registration Successful!
+        </h3>
+        <p class="mt-2 text-sm text-gray-500">
+          Your account has been successfully created. You will now be redirected
+          to the login page.
+        </p>
+        <div class="mt-6 flex justify-center">
+          <button
+            id="okButton"
+            type="button"
+            class="inline-flex w-full justify-center rounded-md bg-teal-400 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:ring-offset-2"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("registrationForm");
+        const fullNameInput = document.getElementById("fullName");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const educationLevelSelect = document.getElementById("educationLevel");
+        const skillsTextarea = document.getElementById("skills");
+        const errorMessageDiv = document.getElementById("error-message");
+
+        const successModal = document.getElementById("successModal");
+        const okButton = document.getElementById("okButton");
+
+        const inputs = [
+          fullNameInput,
+          emailInput,
+          passwordInput,
+          educationLevelSelect,
+          skillsTextarea,
+        ];
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Function to show an error message
+        function showErrorMessage(message) {
+          errorMessageDiv.textContent = message;
+          errorMessageDiv.classList.remove("hidden");
+        }
+
+        // Function to hide the error message
+        function hideErrorMessage() {
+          errorMessageDiv.textContent = "";
+          errorMessageDiv.classList.add("hidden");
+        }
+
+        // Function to add invalid styling
+        function setInvalid(element) {
+          element.classList.add("input-invalid");
+        }
+
+        // Function to remove invalid styling
+        function removeInvalid(element) {
+          element.classList.remove("input-invalid");
+        }
+
+        // Function to show the success modal
+        function showSuccessModal() {
+          successModal.classList.remove("hidden");
+        }
+
+        form.addEventListener("submit", (e) => {
+          // Prevent the default form submission
+          e.preventDefault();
+
+          // Clear previous errors
+          hideErrorMessage();
+          inputs.forEach(removeInvalid);
+
+          // Validation flags
+          let isValid = true;
+          let errorMessage = "";
+
+          if (fullNameInput.value.trim() === "") {
+            isValid = false;
+            errorMessage = "Please enter your full name.";
+            setInvalid(fullNameInput);
+          } else if (emailInput.value.trim() === "") {
+            isValid = false;
+            errorMessage = "Please enter your email address.";
+            setInvalid(emailInput);
+          } else if (!emailRegex.test(emailInput.value.trim())) {
+            isValid = false;
+            errorMessage = "Please enter a valid email address.";
+            setInvalid(emailInput);
+          } else if (passwordInput.value.trim() === "") {
+            isValid = false;
+            errorMessage = "Please create a password.";
+            setInvalid(passwordInput);
+          } else if (passwordInput.value.length < 8) {
+            isValid = false;
+            errorMessage = "Password must be at least 8 characters long.";
+            setInvalid(passwordInput);
+          } else if (educationLevelSelect.value === "") {
+            isValid = false;
+            errorMessage = "Please select your education level.";
+            setInvalid(educationLevelSelect);
+          } else if (skillsTextarea.value.trim() === "") {
+            isValid = false;
+            errorMessage = "Please list your skills or interests.";
+            setInvalid(skillsTextarea);
+          }
+
+          if (!isValid) {
+            showErrorMessage(errorMessage);
+          } else {
+            // If the form is valid, show the success modal
+            showSuccessModal();
+          }
+        });
+
+        // Add event listener to the OK button in the modal
+        okButton.addEventListener("click", () => {
+          // Redirect to the login page
+          window.location.href = "login_page.html";
+        });
+      });
+    </script>
+  </body>
+</html>

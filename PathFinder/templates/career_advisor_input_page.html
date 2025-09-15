@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+
+  <body class="bg-[#F8F9FA]">
+    <div
+      class="relative flex size-full min-h-screen flex-col group/design-root"
+      style="font-family: 'Poppins', 'Inter', sans-serif"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="flex items-center justify-between whitespace-nowrap px-10 py-5"
+        >
+          <div class="flex items-center gap-3 text-[#181111]">
+            <div class="p-2 bg-[#E0F2F1] rounded-full">
+              <svg
+                class="text-[#00796B]"
+                fill="none"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L2 7V17L12 22L22 17V7L12 2Z"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+                <path
+                  d="M2 7L12 12M22 7L12 12M12 22V12M17 4.5L7 9.5"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+              </svg>
+            </div>
+            <h2
+              class="text-[#1A202C] text-xl font-bold leading-tight tracking-[-0.015em]"
+            >
+              EduPath
+            </h2>
+          </div>
+          <div class="flex flex-1 justify-end items-center gap-6">
+            <div class="hidden md:flex items-center gap-8">
+              <a
+                class="text-[#4A5568] text-sm font-medium leading-normal hover:text-[#00796B]"
+                href="{% url 'landing_page' %}"
+                >Home</a
+              >
+              <a
+                class="text-[#4A5568] text-sm font-medium leading-normal hover:text-[#00796B]"
+                href="#"
+                >Courses</a
+              >
+              <a
+                class="text-[#4A5568] text-sm font-medium leading-normal hover:text-[#00796B]"
+                href="#"
+                >Advisors</a
+              >
+              <a
+                class="text-[#4A5568] text-sm font-medium leading-normal hover:text-[#00796B]"
+                href="#"
+                >Resources</a
+              >
+            </div>
+            <button
+              class="relative flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white text-[#4A5568] hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArH99THMxA6sORCxn6WhnKLpAujzhEpSNIhyYQWcBcSQf4d39a-TJzF1zAr3Gaxp5H721oSI6ZFvYzn0M6XOLj-tKC9CHTXG2d8F4tEZZj2ZJToe30_RZ2AFh33Ep0afciiALEUPfXAfLEcYKwkWzto3MKxsmJOyGYwQ_OujssYaOMWOWgH2nWRl-ffjn8e-4W9-9UJkVcTBbPxq4V6jSy7MBLI7xpY-e-F92DdsJ3KEol4E4I6Rwxv2wOAHygxXaoBAXF8_vGLqO0');
+              "
+            ></div>
+          </div>
+        </header>
+        <main class="flex flex-1 justify-center items-center py-10 px-4">
+          <div
+            class="bg-white rounded-2xl shadow-sm w-full max-w-lg p-8 space-y-8"
+          >
+            <div class="text-center">
+              <h1 class="text-[#1A202C] text-3xl font-bold tracking-tight">
+                Find Your Path
+              </h1>
+              <p class="text-[#718096] mt-2">
+                Tell us a bit about yourself to get personalized advice.
+              </p>
+            </div>
+            <form
+              action="{% url 'career_advisor_input_page' %}"
+              class="space-y-6"
+              method="POST"
+              id="careerForm"
+            >
+              {% csrf_token %}
+              <div class="relative">
+                <label class="block text-sm font-medium text-[#2D3748] mb-2"
+                  >Interests</label
+                >
+                <div class="grid grid-cols-2 gap-3 pl-1" id="interests-group">
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="interests[]"
+                      value="Technology"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Technology</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="interests[]"
+                      value="Arts"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Arts</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="interests[]"
+                      value="Healthcare"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Healthcare</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="interests[]"
+                      value="Business"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Business</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="interests[]"
+                      value="Science"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Science</span>
+                  </label>
+                </div>
+              </div>
+              <div class="relative">
+                <label class="block text-sm font-medium text-[#2D3748] mb-2"
+                  >Skills</label
+                >
+                <div class="grid grid-cols-2 gap-3 pl-1" id="skills-group">
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="skills[]"
+                      value="Programming"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Programming</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="skills[]"
+                      value="Design"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Design</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="skills[]"
+                      value="Communication"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Communication</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="skills[]"
+                      value="Problem Solving"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Problem Solving</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      name="skills[]"
+                      value="Leadership"
+                      class="form-checkbox text-[#00796B] focus:ring-[#B2DFDB]"
+                    />
+                    <span class="text-sm text-gray-700">Leadership</span>
+                  </label>
+                </div>
+              </div>
+              <div class="relative">
+                <label
+                  class="block text-sm font-medium text-[#2D3748] mb-2"
+                  for="occupation"
+                  >Occupation</label
+                >
+                <div class="relative">
+                  <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    >work</span
+                  >
+                  <select
+                    name="occupation"
+                    id="occupation"
+                    required
+                    class="form-select w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg bg-gray-50 focus:ring-2 focus:ring-[#B2DFDB] focus:border-[#00796B] transition-colors"
+                  >
+                    <option value="" disabled selected>e.g., Occupation</option>
+                    <option value="Business">Business</option>
+                    <option value="Student">Student</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div id="validation-message" class="text-red-500 text-sm hidden">
+                Please select at least one interest, one skill, and your
+                occupation.
+              </div>
+              <button
+                class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#00796B] text-white font-semibold rounded-lg shadow-md hover:bg-[#00695C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00796B] transition-all duration-300 transform hover:scale-105"
+                type="submit"
+              >
+                <span><a href="/acadamic"> Advice</a></span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("careerForm")
+        .addEventListener("submit", function (event) {
+          const interests = document.querySelectorAll(
+            '#interests-group input[type="checkbox"]:checked'
+          );
+          const skills = document.querySelectorAll(
+            '#skills-group input[type="checkbox"]:checked'
+          );
+          const occupation = document.getElementById("occupation").value;
+          const validationMessage =
+            document.getElementById("validation-message");
+
+          if (
+            interests.length === 0 ||
+            skills.length === 0 ||
+            occupation === ""
+          ) {
+            event.preventDefault(); // Stop the form from submitting
+            validationMessage.classList.remove("hidden");
+          } else {
+            validationMessage.classList.add("hidden");
+          }
+        });
+    </script>
+  </body>
+</html>

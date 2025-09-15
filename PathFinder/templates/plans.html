@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <title>PathFinder</title>
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style type="text/tailwindcss">
+    :root {
+        --light-background: #f7fafc;
+        --soft-blue: #a0deff;
+        --soft-green: #a7f3d0;
+        --pastel-highlight: #fed7e2;
+        --text-color: #2d3748;
+        --heading-color: #1a202c;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--light-background);
+        color: var(--text-color);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: 'Inter', sans-serif;
+        color: var(--heading-color);
+      }
+      .btn {
+        @apply rounded-full shadow-md transition-transform transform hover:scale-105;
+      }
+      .btn-primary {
+        @apply bg-blue-500 hover:bg-blue-600 text-white;
+      }
+      .btn-secondary {
+        @apply bg-gray-200 hover:bg-gray-300 text-gray-800;
+      }
+    </style>
+</head>
+
+<body class="antialiased">
+  <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+      <header
+        class="flex items-center justify-between whitespace-nowrap px-10 py-5 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="flex items-center gap-3 text-gray-800">
+          <span class="material-symbols-outlined text-3xl text-blue-500">explore</span>
+          <h2 class="text-2xl font-bold tracking-tight">PathFinder</h2>
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-gray-600 font-medium">
+          <a class="hover:text-blue-500 transition-colors" href="{% url 'landing_page' %}">Home</a>
+          <a class="hover:text-blue-500 transition-colors" href="#">About</a>
+          <a class="hover:text-blue-500 transition-colors" href="#">Services</a>
+          <a class="hover:text-blue-500 transition-colors" href="#">Contact</a>
+        </div>
+        <div class="flex gap-3">
+          <button class="btn btn-primary h-12 px-6 text-base font-bold"
+            onclick="window.location.href='{% url 'register' %}'">
+            <span class="truncate">Register</span>
+          </button>
+          <button class="btn btn-secondary h-12 px-6 text-base font-bold"
+            onclick="window.location.href='{% url 'login' %}'">
+            <span class="truncate">Login</span>
+          </button>
+        </div>
+      </header>
+      <main class="flex-1">
+        <section class="px-4 md:px-20 py-20 bg-white">
+  <div class="text-center mb-16">
+    <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Our Plans</h2>
+    <p class="text-lg text-gray-600 mt-4">Choose a plan that fits your career journey.</p>
+  </div>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+    
+    <!-- Silver Plan -->
+    <div class="flex flex-col items-center text-center p-8 bg-slate-50 rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300">
+      <div class="p-5 rounded-full bg-gray-100 mb-6">
+        <span class="material-symbols-outlined text-4xl text-gray-500">star</span>
+      </div>
+      <h3 class="text-2xl font-bold mb-3">Silver</h3>
+      <p class="text-gray-600 mb-6">Basic career guidance and access to starter resources.</p>
+      <p class="text-3xl font-bold text-gray-800 mb-6">₹499</p>
+      <button class="btn btn-primary h-12 px-8 text-base font-bold">Buy Now</button>
+    </div>
+
+    <!-- Gold Plan -->
+    <div class="flex flex-col items-center text-center p-8 bg-slate-50 rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300 border-2 border-yellow-400">
+      <div class="p-5 rounded-full bg-yellow-100 mb-6">
+        <span class="material-symbols-outlined text-4xl text-yellow-500">workspace_premium</span>
+      </div>
+      <h3 class="text-2xl font-bold mb-3">Gold</h3>
+      <p class="text-gray-600 mb-6">Advanced AI career guidance + personalized course suggestions.</p>
+      <p class="text-3xl font-bold text-gray-800 mb-6">₹999</p>
+      <button class="btn btn-primary h-12 px-8 text-base font-bold">Buy Now</button>
+    </div>
+
+    <!-- Platinum Plan -->
+    <div class="flex flex-col items-center text-center p-8 bg-slate-50 rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300 border-2 border-blue-500">
+      <div class="p-5 rounded-full bg-blue-100 mb-6">
+        <span class="material-symbols-outlined text-4xl text-blue-500">diamond</span>
+      </div>
+      <h3 class="text-2xl font-bold mb-3">Platinum</h3>
+      <p class="text-gray-600 mb-6">Full access to AI tools, career guidance, and education planning support.</p>
+      <p class="text-3xl font-bold text-gray-800 mb-6">₹1499</p>
+      <button class="btn btn-primary h-12 px-8 text-base font-bold">Buy Now</button>
+    </div>
+
+  </div>
+</section>
+
+      </main>
+      <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-10 py-12">
+          <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-3xl">explore</span>
+              <h2 class="text-2xl font-bold tracking-tight">PathFinder</h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-gray-400">
+              <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+              <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+              <a class="hover:text-white transition-colors" href="#">Contact Us</a>
+            </div>
+            <p class="text-gray-500">© 2024 PathFinder. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+</body>
+
+</html>
